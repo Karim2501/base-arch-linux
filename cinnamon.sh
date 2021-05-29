@@ -1,9 +1,9 @@
 #!/bin/bash
 
-sudo pacman -Syyu
 sudo reflector -c Indonesia -a 12 --sort rate --save /etc/pacman.d/mirrorlist
 
-sudo pacman -S --noconfirm lightdm lightdm-gtk-greeter lightdm-gtk-greeter-settings cinnamon firefox arc-gtk-theme arc-icon-theme obs-studio vlc xed xreader metacity gnome-shell
+sudo pacman -Syyu
+sudo pacman -S --noconfirm lightdm lightdm-gtk-greeter lightdm-gtk-greeter-settings cinnamon arc-gtk-theme arc-icon-theme obs-studio xed xreader metacity gnome-shell
 
 sudo systemctl enable lightdm
 /bin/echo -e "\e[1;32mREBOOTING IN 5..4..3..2..1..\e[0m"

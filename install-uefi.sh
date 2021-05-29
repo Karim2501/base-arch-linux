@@ -19,7 +19,7 @@ echo "::1       localhost" >> /etc/hosts
 echo "127.0.1.1 Arch.localdomain Arch" >> /etc/hosts
 echo root:password | chpasswd
 
-pacman -S --noconfirm grub efibootmgr networkmanager network-manager-applet wpa_supplicant base-devel linux-headers dnsutils bluez bluez-utils cups alsa alsa-utils pulseaudio openssh reflector acpi acpid acpi_call qemu qemu-arch-extra net-tools dhcpcd firewalld flatpak os-prober ntfs-3g terminus-font xorg ranger htop neofetch firefox filezilla vim nano
+pacman -S --noconfirm grub efibootmgr networkmanager network-manager-applet wpa_supplicant base-devel linux-headers dnsutils bluez bluez-utils cups alsa alsa-utils pulseaudio openssh reflector acpi acpid acpi_call qemu qemu-arch-extra net-tools dhcpcd firewalld os-prober ntfs-3g terminus-font xorg ranger htop neofetch firefox filezilla vim nano vlc
 
 # pacman -S --noconfirm xf86-video-amdgpu
 # pacman -S --noconfirm nvidia nvidia-utils nvidia-settings
