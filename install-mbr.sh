@@ -24,7 +24,7 @@ pacman -S --noconfirm grub efibootmgr networkmanager network-manager-applet wpa_
 # pacman -S --noconfirm xf86-video-amdgpu
 # pacman -S --noconfirm nvidia nvidia-utils nvidia-settings
 
-grub-install /dev/sdb
+grub-install /dev/sda
 grub-mkconfig -o /boot/grub/grub.cfg
 
 systemctl enable NetworkManager
