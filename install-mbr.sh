@@ -40,3 +40,4 @@ echo "%wheel ALL=(ALL) ALL" >> /etc/sudoers.d/karim
 
 printf "\e[1;32mDone! Type exit, umount -a and reboot.\e[0m"
 
+
