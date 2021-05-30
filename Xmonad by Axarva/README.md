@@ -29,7 +29,7 @@
 
 <img src="/screenshots/EwwLogo.png" alt="eww" align="right" height="180vh">
 
-
+- **Note:** Check out the `modified` branch for a newer setup. Hope you like it!
 - **xmonad** ⚽ 
 - **eww** 🤢
 - **firefox** 🦊
@@ -51,13 +51,14 @@ Even if you're not, just look through the gallery 📷:
 
 
 <a id="gal"></a>
-<img src='/screenshots/modified.png'>
+<img src='/screenshots/sidebar.png'>
+<img src='/screenshots/firefox.png'>
+<img src='/screenshots/center.png'>
 
 <a id="workflow"></a>
 
 ## Workflow 🖨️
 Workflow GIF: (This is a short one, for more goodies look at the links below)
-The workflow doesn't differ on this branch either.
 
 (Also, compression made it look kinda bad, but I think it shows what it needs to)
 
@@ -124,58 +125,17 @@ Note: Whatever method you follow, if you want the weather and quote features to 
 
 
 And please follow these next few steps as well:
-- Add `export PATH="$PATH:/home/{Your_User}/bin"` to your `~/.zshrc` file.
+- Add `export PATH="$PATH:$HOME/bin"` to your `~/.bashrc` file (or a shell of your choice).
 - Edit the script in `~/.config/eww/scripts/getweather`. Further steps are specified within that file.
 - Open `tint2conf` and edit the theme `panellauncher.tint2rc`. In there, head over to the `Launcher` tab and set the icon theme as candy-icons.
 - Get the Museo Sans 300 (ONLY THE 300 WEIGHT PLEASE, OTHERS LOOK WEIRD) font from Adobe itself or any other sources, put the `.ttf` or `.otf` file in your `~/.local/share/fonts`
   - Run `fc-cache -f` after getting the font.
 - If the widgets don't work properly, go to [the main repository](https://github.com/elkowar/eww) and install `eww` as documented. Make sure the resulting binary is stored in `~/bin`.
 - Issue `xmonad --recompile` after you complete all the steps, and relogin to xmonad.
-- For the profile picture to load, it needs to have the full path in `eww.scss`. Open the file, search for the string containing `~/.config`(line number 329 to be exact) and edit it to point it to your image. Full path required. For example: `/home/axarva/path/to/image.png`.
-- Minor details: If you are on `systemd`, edit all the files related to powermenus to match the commands specific to systemd. For example:
-
-```bash
-loginctl suspend
-```
-
-And:
-```bash
-doas poweroff
-```
-
-Become:
-
-```bash
-systemctl suspend
-```
-
-And:
+- For the profile picture to load, it needs to have the full path in `eww.scss`. Open the file, search for the string containing `~/.config`(line number 329 to be exact) and edit it to point it to your image. Full path required. For example: `$HOME/path/to/image.png`.
 
 
-```bash
-systemctl poweroff
-```
 
-
-Respectively.
-
-<a id="sysd-replace"></a>
-
-### Stuff to global-replace for systemd users
-- `loginctl suspend` with `systemctl suspend`
-- `doas reboot` with `systemctl reboot`
-- `doas poweroff` with  `systemctl poweroff`
-
-These references occur in the following files:
-- bin/powermenu.sh
-- eww*/scripts/shutdown.sh
-- eww*/scripts/reboot.sh
-- eww*/scripts/suspend.sh
-
-`doas` references:
-- eww*/scripts/getvpnstat (You probably won't be using protonvpn, so you could just ignore this as well.)
-- eww*/scripts/shutdown.sh
-- eww*/scripts/reboot.sh
 
 <a id="arch"></a>
 
@@ -196,7 +156,6 @@ Note: THIS MAKES BACKUPS TOO, SO YEAH. JUST DO IT. DO IT!
 ```bash
 $ git clone https://github.com/Axarva/dotfiles-2.0.git
 $ cd ./dotfiles-2.0
-$ git checkout modified
 $ chmod +x ./install-on-arch.sh
 $ ./install-on-arch.sh
 ```
@@ -229,7 +188,6 @@ You need to install the dependencies yourself, this script will add the fonts an
 ```bash
 $ git clone https://github.com/Axarva/dotfiles-2.0.git
 $ cd ./dotfiles-2.0
-$ git checkout modified
 $ chmod +x ./install-on-gentoo.sh
 $ ./install-on-gentoo.sh
 ```
@@ -248,20 +206,18 @@ Ahhhhh the other main stuff. Here you go, peeps. Make sure you have em all.
 -    tint2 (Please use [this fork](https://github.com/Axarva/tint2-1) ONLY, or issues will occur. Binaries provided already.)
 -    acpi
 -    Museo Sans Font by Adobe (I think it needs some sort of acount, but get it) Or just search for it on the web and get it somewhere
--    ~~Any Nerd Font, Iosevka recommended along with Hurmit.~~ Nerd Fonts now included in folder. [Link](https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/Iosevka) 
+-    Nerd Font. I include some, but you can use any of your choice. [Link](https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/Iosevka) 
 -    playerctl
 -    brightnessctl. [Link](https://github.com/Hummer12007/brightnessctl)
--    OpenRC (Wait a sec, yep, remember to edit the powermenu files if you use systemd)
 -    candy-icons. [Link](https://github.com/EliverLara/candy-icons)
 -    dunst
 -    Spotify (for cover art, else edit the eww/scripts/getart script accordingly)
 -    An OpenWeatherMap Account, (view eww/scripts/getweather script for more info)
 -    feh
 -    NetworkManager
--    zsh (THIS IS IMPORTANT)
+-    greenclip
 -    alacritty
 -    picom (fork of ibhagwan or jonaburg)
--    doas- wait, just replace doas occurences with sudo, or go macho and install doas
 -    jq: Command line json parser (Needed for widgets)
 -    maim and xclip for screenshots
 -    mpv for low-battery sound playing (Not exactly necessary, you'll get the notification, but the sound depends on it.)
@@ -285,6 +241,7 @@ And here we are:
    - ~~Save the file, and refresh the bar with hitting the keybind `Win + B` twice.~~
    - ~~Remember not to edit that particular file with `tint2conf`, or you'll have to do this again!~~
 9. The workspace indicator bar issue has been solved through the binaries in my fork.
+10. For instructions regarding use on VirtualMachine, please do check the `VM` folder of this repository.
    
    
 <h1 align="center">🌟 Good Luck and Cheers! 🌟</h1>
