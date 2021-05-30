@@ -1,4 +1,4 @@
-<img src='/screenshots/yeeyee.jpg'>
+<img src='/Xmonad by Axarva/screenshots/yeeyee.jpg'>
 
 <h1 align="center">🚀✨ Widgets go brr! ✨🚀</h1>
 
@@ -27,7 +27,7 @@
 ## Starring:
 
 
-<img src="/screenshots/EwwLogo.png" alt="eww" align="right" height="180vh">
+<img src="/Xmonad by Axarva/screenshots/EwwLogo.png" alt="eww" align="right" height="180vh">
 
 - **Note:** Check out the `modified` branch for a newer setup. Hope you like it!
 - **xmonad** ⚽ 
@@ -51,9 +51,9 @@ Even if you're not, just look through the gallery 📷:
 
 
 <a id="gal"></a>
-<img src='/screenshots/sidebar.png'>
-<img src='/screenshots/firefox.png'>
-<img src='/screenshots/center.png'>
+<img src='/Xmonad by Axarva/screenshots/sidebar.png'>
+<img src='/Xmonad by Axarva/screenshots/firefox.png'>
+<img src='/Xmonad by Axarva/screenshots/center.png'>
 
 <a id="workflow"></a>
 
