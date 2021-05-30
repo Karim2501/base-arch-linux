@@ -24,5 +24,5 @@ ome for Windows Managers soon.
 15. Download the git repository with `git clone https://github.com/Karim2501/base-arch-linux`
 16. `cd base-arch-linux`
 17. Make script to executeable with `chmod +x install-uefi.sh` or `chmod +x install-mbr.sh`
-18. Run with `./install-uefi.sh` or `./install-mbr.sh
+18. Run with `./install-uefi.sh` or `./install-mbr.sh`
 19. Enjoy:)
