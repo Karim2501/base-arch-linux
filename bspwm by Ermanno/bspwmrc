@@ -5,7 +5,7 @@ pgrep -x sxhkd > /dev/null || sxhkd &
 setxkbmap ch &
 light-locker &
 /usr/bin/dunst &
-bash /home/ermanno/.config/polybar/forest/launch.sh &
+bash /home/$USER/.config/polybar/forest/launch.sh &
 nitrogen --restore 
 xrandr --output DisplayPort-0 --mode 3840x2160 &
 picom --no-fading-openclose &
