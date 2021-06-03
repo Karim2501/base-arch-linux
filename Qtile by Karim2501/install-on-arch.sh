@@ -10,7 +10,7 @@ sudo pacman -noconfirm -Syyu
 sudo pacman -S --noconfirm xorg-xinit xorg-xinput qtile zsh wget git feh gparted alacritty obs-studio kdenlive code inkscape gimp libreoffice shotcut
 
 #Make directory
-mkdir -p ~/.local/share/fonts
+#mkdir -p ~/.local/share/fonts
 mkdir -p ~/.srcs
 mkdir -p ~/.config
 
@@ -22,12 +22,20 @@ paru -S
 #Install oh-my-zsh
 cd ~/
 sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+paru -S --noconfirm ttf-dejavu meslo-nerd-font-powerlevel10k
 
-#Install powerlevel10k
+#oh-my-zsh from git
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+git clone https://github.com/zsh-users/zsh-completions ${ZSH_CUSTOM:=~/.oh-my-zsh/custom}/plugins/zsh-completions
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/themes/powerlevel10k
-paru -S ttf-dejavu meslo-nerd-font-powerlevel10k
 
 #Copy Source Code
+cp .config ~/
+cp .xinitrc ~/
+cp .zprofile ~/
+cp .zshrc ~/
+cp Pictures ~/ -R
 
 #Enable if you want
 

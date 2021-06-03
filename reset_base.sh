@@ -1,5 +1,4 @@
 #!/bin/bash
-
 #must run in superuser mode
 
 sudo pacman -D --asdeps $(pacman -Qqe)
