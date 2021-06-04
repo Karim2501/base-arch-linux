@@ -1,14 +1,5 @@
 #!/bin/bash
 
-#Update mirrorlist 
-sudo reflector -c Indonesia -a 12 --sort rate --save /etc/pacman.d/mirrorlist
-
-#Refresh pacman
-sudo pacman -noconfirm -Syyu
-
-#Install package
-sudo pacman -S --noconfirm xorg-xinit xorg-xinput qtile zsh wget git feh gparted alacritty obs-studio kdenlive code inkscape gimp libreoffice shotcut
-
 #Make directory
 #mkdir -p ~/.local/share/fonts
 mkdir -p ~/.srcs
@@ -17,12 +8,21 @@ mkdir -p ~/.config
 #Install paru - helper AUR
 git clone https://aur.archlinux.org/paru.git ~/.srcs
 cd ~/.srcs/paru/ && makepkg -si
-paru
+
+#Update mirrorlist 
+sudo reflector -c Indonesia -a 12 --sort rate --save /etc/pacman.d/mirrorlist
+
+#Refresh pacman
+sudo pacman -noconfirm -Syyu
+
+#Install package
+sudo pacman -S --noconfirm xorg-xinit xorg-xinput qtile zsh wget git feh gparted alacritty obs-studio kdenlive code inkscape gimp libreoffice shotcut python-pip
+paru -S --noconfirm ttf-dejavu meslo-nerd-font-powerlevel10k moc-pulse pfetch
+pip install psutil
 
 #Install oh-my-zsh
 cd ~/
 sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-paru -S --noconfirm ttf-dejavu meslo-nerd-font-powerlevel10k
 
 #oh-my-zsh from git
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting

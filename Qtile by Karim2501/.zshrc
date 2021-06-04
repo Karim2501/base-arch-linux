@@ -1,5 +1,6 @@
 # Startup
-neofetch
+#neofetch
+pfetch
 
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
@@ -28,8 +29,8 @@ autoload -U compinit && compinit
 # Alias
 alias pacsyu="sudo pacman -Syyu"
 alias paci="sudo pacman -S"
-alias parsy="sudo paru -Syyu"
-alias pari="sudo paru -S"
+alias parsy="paru -Syyu"
+alias pari="paru -S"
 alias py3="python3"
 
 # Set list of themes to pick from when loading at random

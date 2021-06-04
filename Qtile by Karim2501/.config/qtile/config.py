@@ -124,7 +124,7 @@ screens = [
                 widget.Systray(),
                 widget.Sep(linewidth = 0, padding = 6),
                 widget.CheckUpdates(
-                    update_interval = 3600,
+                    update_interval = 600,
                     distro = 'Arch',
                     display_format = "{updates} Updates",
                     mouse_callbacks = {'Button1': lambda: qtile.cmd_spawn(myTerm + ' -e sudo pacman -Syu')},
@@ -132,8 +132,8 @@ screens = [
                 widget.Sep(linewidth = 0, padding = 6),
                 widget.Net(
                     interface = "wlp3s0",
-                    format = '{down}{up}',
-                    update_interval = 1,
+                    format = '{up} ↑↓ {down}',
+                    update_interval = 2,
                     mouse_callbacks = {"Button1" : lambda: qtile.cmd_spawn(myTerm + " -e nmtui")},
                     ),
                 widget.Sep(linewidth = 0, padding = 6),
@@ -141,17 +141,17 @@ screens = [
                 widget.Sep(linewidth = 0, padding = 6),
                 widget.CPU(
                     format = '{load_percent}% ',
-                    update_interval = 2,
+                    update_interval = 5,
                     mouse_callbacks = {"Button 1" : lambda : qtile.cmd_spawn(myTerm + " -e htop")},
                     ),
                 widget.Sep(linewidth = 0, padding = 6),
                 widget.Memory(
                     format = '{MemUsed}M',
-                    update_interval = 1,
+                    update_interval = 3,
                     ),
                 widget.Sep(linewidth = 0, padding = 6),
                 widget.Volume(
-                    update_interval = 2, 
+                    update_interval = 30, 
                     mouse_callbacks = {"Button1" : lambda : qtile.cmd_spawn("pavucontrol")},
                     ),
                 widget.Sep(linewidth = 0, padding = 6),
