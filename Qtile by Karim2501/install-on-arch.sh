@@ -17,7 +17,7 @@ mkdir -p ~/.config
 #Install paru - helper AUR
 git clone https://aur.archlinux.org/paru.git ~/.srcs
 cd ~/.srcs/paru/ && makepkg -si
-paru -S
+paru
 
 #Install oh-my-zsh
 cd ~/

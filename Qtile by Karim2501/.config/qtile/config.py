@@ -1,11 +1,12 @@
 import os, re, socket, subprocess
 from typing import List  # noqa: F401
-from libqtile import bar, layout, widget, hook
+from libqtile import qtile, bar, layout, widget, hook
 from libqtile.config import Click, Drag, Group, Key, Match, Screen
 from libqtile.lazy import lazy
 
 mod = "mod4"
 mod1 = "alt"
+myTerm = "alacritty"
 
 keys = [
 
@@ -38,13 +39,12 @@ keys = [
 
 
     # Volume Keys 
-    Key([], "XF86AudioMute", lazy.spawn("amixer -D pulse sset Master toggle")),
     Key([], "XF86AudioLowerVolume", lazy.spawn("amixer -D pulse sset Master 5%-")),
     Key([], "XF86AudioRaiseVolume", lazy.spawn("amixer -D pulse sset Master 5%+")),
 
     # Apps Keys
     Key([mod], "g", lazy.spawn("google-chrome-stable"), desc="Launch Google-browser"),
-    Key([mod], "Return", lazy.spawn("alacritty"), desc="Launch terminal"),
+    Key([mod], "Return", lazy.spawn(myTerm), desc="Launch terminal"),
     Key([mod], "r", lazy.spawn("rofi -show run"), desc="Launch Rofi"),
     Key([mod], "t", lazy.spawn("telegram-desktop"), desc="Launch Telegram"),
 ]
@@ -65,13 +65,13 @@ for i in groups:
     ])
 
 layouts = [
-        #layout.MonadTall(
-        #    border_normal=("344152"),
-        #    border_focus=("344152"),
-        #    border_width=1,
-        #    ratio=0.70,
-        #    single_border_width=1
-        #    )
+    #layout.MonadTall(
+    #    border_normal=("344152"),
+    #    border_focus=("344152"),
+    #    border_width=1,
+    #    ratio=0.70,
+    #    single_border_width=1
+    #    )
     layout.Columns(border_focus_stack='#'),
     layout.Max(),
 
@@ -88,22 +88,74 @@ layouts = [
     # layout.Zoomy(),
 ]
 
+layout_theme = {""
+                ""
+                ""
+                ""
+               }
+
+colors = [[],
+          [],
+          [],
+          [],
+         ]
+
+prompt = "{0}@{1}: ".format(os.environ["USER"], socket.gethostname())
+
 widget_defaults = dict(
     font='sans',
-    fontsize=12,
-    padding=3,
+    fontsize=11,
+    padding=2,
 )
+extension_defaults = widget_defaults.copy()
 
 screens = [
     Screen(
         top=bar.Bar(
             [
-                widget.GroupBox(border_width=0, disable_drag=True, spacing=1),
+                widget.Sep(linewidth = 0, padding = 6),
+                widget.Image(
+                    filename = "~/.config/qtile/Pictures/terminal_icons.png", 
+                    scale = True, 
+                    mouse_callbacks = {"Button1" : lambda: qtile.cmd_spawn(myTerm)},
+                    ),
+                widget.GroupBox(border_width = 2, disable_drag = True),
                 widget.WindowName(),
-                widget.CPU(format='{load_percent}% ', update_interval=2),
-                widget.Memory(format='{MemUsed/MemTotal}M ', update_interval=1),
-                widget.Volume(fontsize=12, update_interval=2),
-                widget.Clock(format='%I:%M %p, %A %d-%m-%Y'),
+                widget.Systray(),
+                widget.Sep(linewidth = 0, padding = 6),
+                widget.CheckUpdates(
+                    update_interval = 3600,
+                    distro = 'Arch',
+                    display_format = "{updates} Updates",
+                    mouse_callbacks = {'Button1': lambda: qtile.cmd_spawn(myTerm + ' -e sudo pacman -Syu')},
+                    ),
+                widget.Sep(linewidth = 0, padding = 6),
+                widget.Net(
+                    interface = "wlp3s0",
+                    format = '{down}{up}',
+                    update_interval = 1,
+                    mouse_callbacks = {"Button1" : lambda: qtile.cmd_spawn(myTerm + " -e nmtui")},
+                    ),
+                widget.Sep(linewidth = 0, padding = 6),
+                widget.Battery(),
+                widget.Sep(linewidth = 0, padding = 6),
+                widget.CPU(
+                    format = '{load_percent}% ',
+                    update_interval = 2,
+                    mouse_callbacks = {"Button 1" : lambda : qtile.cmd_spawn(myTerm + " -e htop")},
+                    ),
+                widget.Sep(linewidth = 0, padding = 6),
+                widget.Memory(
+                    format = '{MemUsed}M',
+                    update_interval = 1,
+                    ),
+                widget.Sep(linewidth = 0, padding = 6),
+                widget.Volume(
+                    update_interval = 2, 
+                    mouse_callbacks = {"Button1" : lambda : qtile.cmd_spawn("pavucontrol")},
+                    ),
+                widget.Sep(linewidth = 0, padding = 6),
+                widget.Clock(format = '%I:%M %p, %A %d-%m-%Y'),
             ],
             24,
         ),
@@ -112,10 +164,8 @@ screens = [
 
 # Drag floating layouts.
 mouse = [
-    Drag([mod], "Button1", lazy.window.set_position_floating(),
-         start=lazy.window.get_position()),
-    Drag([mod], "Button3", lazy.window.set_size_floating(),
-         start=lazy.window.get_size()),
+    Drag([mod], "Button1", lazy.window.set_position_floating(), start=lazy.window.get_position()),
+    Drag([mod], "Button3", lazy.window.set_size_floating(), start=lazy.window.get_size()),
     Click([mod], "Button2", lazy.window.bring_to_front())
 ]
 
@@ -142,6 +192,6 @@ floating_layout = layout.Floating(float_rules=[
 ])
 
 @hook.subscribe.startup_once
-def autostart():
-        home = os.path.expanduser('~/.config/qtile/autostart.sh')
-        subprocess.call([home])
+def start_once():
+        home = os.path.expanduser('~')
+        subprocess.call([home + '/.config/qtile/autostart.sh'])

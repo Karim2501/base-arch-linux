@@ -9,7 +9,7 @@ ome for Windows Managers soon.
 # Installation Arch Linux
 1. If needed, load your keymap
 2. Connect to internet with `dhcpcd` or `iwctl`
-3. `ping google.com`
+3. Check internet with `ping google.com`
 4. Sync time `timedatectl set-ntp true`
 5. Check partition with `fdisk -l` or `lsblk`
 6. Partition the disk with `parted` or `cfdisk`
