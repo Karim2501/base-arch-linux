@@ -17,7 +17,7 @@ sudo pacman -noconfirm -Syyu
 
 #Install package
 sudo pacman -S --noconfirm xorg-xinit xorg-xinput qtile zsh wget git feh gparted alacritty obs-studio kdenlive code inkscape gimp libreoffice shotcut python-pip
-paru -S --noconfirm ttf-dejavu meslo-nerd-font-powerlevel10k moc-pulse pfetch
+paru -S --noconfirm ttf-dejavu meslo-nerd-font-powerlevel10k moc-pulse pfetch rofi-git google-chrome
 pip install psutil
 
 #Install oh-my-zsh

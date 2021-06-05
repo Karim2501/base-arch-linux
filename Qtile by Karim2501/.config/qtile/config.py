@@ -27,9 +27,7 @@ keys = [
     Key([mod, "control"], "j", lazy.layout.grow_down(), desc="Grow window down"),
     Key([mod, "control"], "k", lazy.layout.grow_up(), desc="Grow window up"),
     Key([mod], "n", lazy.layout.normalize(), desc="Reset all window sizes"),
-
     Key([mod, "shift"], "Return", lazy.layout.toggle_split(), desc="Toggle between split and unsplit sides of stack"),
-    Key([mod], "Tab", lazy.next_layout(), desc="Toggle between layouts"),
     
     # System Keys
     Key([mod], "Tab", lazy.next_layout(), desc="Toggle between layouts"),
