@@ -37,11 +37,6 @@ keys = [
     Key([mod, "control"], "r", lazy.restart(), desc="Restart Qtile"),
     Key([mod, "control"], "q", lazy.shutdown(), desc="Shutdown Qtile"),
 
-
-    # Volume Keys 
-    Key([], "XF86AudioLowerVolume", lazy.spawn("amixer -D pulse sset Master 5%-")),
-    Key([], "XF86AudioRaiseVolume", lazy.spawn("amixer -D pulse sset Master 5%+")),
-
     # Apps Keys
     Key([mod], "g", lazy.spawn("google-chrome-stable"), desc="Launch Google-browser"),
     Key([mod], "Return", lazy.spawn(myTerm), desc="Launch terminal"),
@@ -53,59 +48,49 @@ groups = [Group(i) for i in "123456789"]
 
 for i in groups:
     keys.extend([
-        # mod1 + letter of group = switch to group
         Key([mod], i.name, lazy.group[i.name].toscreen(), desc="Switch to group {}".format(i.name)),
-
-        # mod1 + shift + letter of group = switch to & move focused window to group
         Key([mod, "shift"], i.name, lazy.window.togroup(i.name, switch_group=True), desc="Switch to & move focused window to group {}".format(i.name)),
-        # Or, use below if you prefer not to switch to that group.
-        # # mod1 + shift + letter of group = move focused window to group
-        # Key([mod, "shift"], i.name, lazy.window.togroup(i.name),
-        #     desc="move focused window to group {}".format(i.name)),
     ])
 
-layouts = [
-    #layout.MonadTall(
-    #    border_normal=("344152"),
-    #    border_focus=("344152"),
-    #    border_width=1,
-    #    ratio=0.70,
-    #    single_border_width=1
-    #    )
-    layout.Columns(border_focus_stack='#'),
-    layout.Max(),
-
-    # Try more layouts by unleashing below layouts.
-    # layout.Stack(num_stacks=2),
-    # layout.Bsp(),
-    # layout.Matrix(),
-    # layout.MonadTall(),
-    # layout.MonadWide(),
-    # layout.RatioTile(),
-    # layout.Tile(),
-    # layout.TreeTab(),
-    # layout.VerticalTile(),
-    # layout.Zoomy(),
-]
-
-layout_theme = {""
-                ""
-                ""
-                ""
+layout_theme = {"margin" : 3,
+                "border_width" : 2,
+                "border_focus" : "#a1b4db",
+                "border_normal" : "#3a4251",
                }
 
-colors = [[],
-          [],
-          [],
-          [],
+layouts = [
+    layout.Max(**layout_theme),
+    layout.Stack(num_stacks=2),
+    #layout.Bsp(**layout_theme),
+    #layout.Tile(**layout_theme),
+    #layout.Zoomy(**layout_theme),
+    #layout.Matrix(**layout_theme),
+    layout.Columns(**layout_theme),
+    #layout.TreeTab(**layout_theme),
+    layout.Floating(**layout_theme),
+    layout.MonadTall(**layout_theme),
+    layout.RatioTile(**layout_theme),
+    #layout.MonadTall(**layout_theme),
+    #layout.MonadWide(**layout_theme),
+    #layout.VerticalTile(**layout_theme),
+]
+
+colors = [["#2b2b2b", "#2b2b2b"], # 0. panel backgorund
+          ["#a1b1ce", "#a1b1ce"], # 1. background for current screen tab
+          ["#ffffff", "#ffffff"], # 2. font color for groub names
+          ["#00abff", "#00abff"], # 3. border line color current tab
+          ["#1730b0", "#1730b0"], # 4. border line color for other tab
+          ["#4f76c7", "#4f76c7"], # 5. color for the even widget
+          ["#78f48d", "#78f48d"], # 6. window name
+          ["#f2ff84", "#f2ff84"], # 7. background for inactive screen
          ]
 
 prompt = "{0}@{1}: ".format(os.environ["USER"], socket.gethostname())
 
 widget_defaults = dict(
-    font='sans',
-    fontsize=11,
-    padding=2,
+    font = 'sans',
+    fontsize = 12,
+    padding = 2,
 )
 extension_defaults = widget_defaults.copy()
 
@@ -113,49 +98,63 @@ screens = [
     Screen(
         top=bar.Bar(
             [
-                widget.Sep(linewidth = 0, padding = 6),
                 widget.Image(
                     filename = "~/.config/qtile/Pictures/terminal_icons.png", 
                     scale = True, 
                     mouse_callbacks = {"Button1" : lambda: qtile.cmd_spawn(myTerm)},
                     ),
-                widget.GroupBox(border_width = 2, disable_drag = True),
-                widget.WindowName(),
-                widget.Systray(),
-                widget.Sep(linewidth = 0, padding = 6),
+                widget.GroupBox(disable_drag = True),
+                widget.WindowName(foreground = colors[6]),
+                widget.Systray(background = colors[0], icon_size = 18),
                 widget.CheckUpdates(
-                    update_interval = 600,
                     distro = 'Arch',
+                    update_interval = 600,
+                    foreground = colors[2],
+                    background = colors[0],
                     display_format = "{updates} Updates",
                     mouse_callbacks = {'Button1': lambda: qtile.cmd_spawn(myTerm + ' -e sudo pacman -Syu')},
                     ),
-                widget.Sep(linewidth = 0, padding = 6),
+                widget.Sep(linewidth = 0, padding = 2, background = colors[0]),
                 widget.Net(
-                    interface = "wlp3s0",
-                    format = '{up} ↑↓ {down}',
                     update_interval = 2,
+                    interface = "wlp3s0",
+                    foreground = colors[2],
+                    background = colors[0],
+                    format = '{up} ↑↓ {down}',
                     mouse_callbacks = {"Button1" : lambda: qtile.cmd_spawn(myTerm + " -e nmtui")},
                     ),
-                widget.Sep(linewidth = 0, padding = 6),
-                widget.Battery(),
-                widget.Sep(linewidth = 0, padding = 6),
+                widget.Sep(linewidth = 0, padding = 2, background = colors[0]),
+                widget.Battery(
+                    update_interval = 30,
+                    foreground = colors[2],
+                    background = colors[0],
+                    format = "{char} {percent:2.0%} {hour:d}:{min:02d}",
+                    ),
+                widget.Sep(linewidth = 0, padding = 2, background = colors[0]),
                 widget.CPU(
+                    update_interval = 4,
+                    foreground = colors[2],
+                    background = colors[0],
                     format = '{load_percent}% ',
-                    update_interval = 5,
                     mouse_callbacks = {"Button 1" : lambda : qtile.cmd_spawn(myTerm + " -e htop")},
                     ),
-                widget.Sep(linewidth = 0, padding = 6),
+                widget.Sep(linewidth = 0, padding = 2, background = colors[0]),
                 widget.Memory(
-                    format = '{MemUsed}M',
                     update_interval = 3,
+                    foreground = colors[2],
+                    background = colors[0],
+                    format = '{MemUsed}M',
                     ),
-                widget.Sep(linewidth = 0, padding = 6),
+                widget.Sep(linewidth = 0, padding = 2, background = colors[0]),
                 widget.Volume(
-                    update_interval = 30, 
+                    update_interval = 5, 
+                    foreground = colors[2],
+                    background = colors[0],
                     mouse_callbacks = {"Button1" : lambda : qtile.cmd_spawn("pavucontrol")},
                     ),
-                widget.Sep(linewidth = 0, padding = 6),
-                widget.Clock(format = '%I:%M %p, %A %d-%m-%Y'),
+                widget.Sep(linewidth = 0, padding = 2, background = colors[0]),
+                widget.Clock(format = '%I:%M %p, %a %d-%m-%y', foreground = colors[2], background = colors[0]),
+                widget.CurrentLayoutIcon(scale = 0.61, foreground = colors[2], background = colors[0]),
             ],
             24,
         ),
