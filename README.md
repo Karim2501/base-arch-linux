@@ -1,7 +1,6 @@
 # Arch Basic Install Commands-Script
 
-- In this repository you will find packages-scripts for the base install of Arch Linux and the Gnome, KDE, Cinnamon and Xfce desktop environments. More to c
-ome for Windows Managers soon.
+- In this repository you will find packages-scripts for the base install of Arch Linux and the Gnome, KDE, Cinnamon and Xfce desktop environments. More to come for Windows Managers soon.
 - Modify the packages to your liking, make the script executable with `chmod +x kde.sh` and then run with `./kde.sh`.
 - Remember that the first part of the Arch Linux install is manual. The Arch Linux Wiki: https://wiki.archlinux.org/title/Installation_guide.
 - Install the base packages and make sure to inlcude git so that you can clone the repository in arch-chroot.

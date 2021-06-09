@@ -1,6 +1,12 @@
-#!/bin/bash
-#must run in superuser mode
+#|----------------------------------------|
+#| Donation please...                     |
+#| BCA Bank (Virtual) : 3901085769143295  |
+#| BRI Bank (Virtual) : 88810085769143295 |
+#| BNI Bank (Virtual) : 8810085769143295  |
+#| Permata Bank (Virtual) : 4199134316    |
+#|----------------------------------------|
 
+#must run in superuser mode
 sudo pacman -D --asdeps $(pacman -Qqe)
 sleep 10
 

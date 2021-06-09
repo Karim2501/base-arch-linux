@@ -6,7 +6,7 @@
 
 <a id="about"></a>
 ## About This Config
-saya gabut
+I made this configuration so that we don't have to install one by one and our work becomes easier and more efficient.
 
 <a id="keybind"></a>
 ## Keybindings
@@ -32,11 +32,12 @@ In this configuration i use a default keybindings(`.config/qtile/config.py`)....
 | Win + ctrl + j	| Grow window to the down		|
 | Win + ctrl + k	| Grow window to the up			|
 | Win + n		| Reset all window sizes		|
-| Win + g		| Launch Google-browser			|
+| Win + g		| Launch Google				|
 | Win + r		| Launch Rofi				|
 | Win + t		| Launch Telegram			|
 
 <a id="install"></a>
 ## Installation
-How to install?
-You can install my configuration with my script shell. `./install-on-arch.sh`
+You can install my configuration with my script shell.
+- `chmod +x install-on-arch.sh`
+- `./install-on-arch.sh`
