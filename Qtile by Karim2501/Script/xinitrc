@@ -1,2 +1,2 @@
-feh --bg-scale ~/Pictures/Wallpaper/Default.jpg
+feh --bg-scale ~/Pictures/Wallpaper/wallpaper1.jpg
 exec qtile

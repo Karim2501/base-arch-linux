@@ -89,12 +89,13 @@ colors = [["#131313", "#131313"], # 0. Separator
           ["#ffffff", "#ffffff"], # 1. Font White
           ["#000000", "#000000"], # 2. Font Black
           ["#00ec28", "#00ec28"], # 3. Window name
-          ["#EE5A24", "#EE5A24"], # 4. Network
+          ["#ee5a24", "#ee5a24"], # 4. Network
           ["#2d98da", "#2d98da"], # 5. Battery
           ["#4b7bec", "#4b7bec"], # 6. CPU
           ["#3867d6", "#3867d6"], # 7. Memory
           ["#3c40c6", "#3c40c6"], # 8. Volume
-          ["#EA2027", "#EA2027"], # 9. Clock
+          ["#ea2027", "#ea2027"], # 9. Clock
+          ["#505050", "#505050"], # 10. Font Gray
          ]
 
 prompt = "{0}@{1}: ".format(os.environ["USER"], socket.gethostname())
@@ -115,7 +116,15 @@ screens = [
                     scale = True, 
                     mouse_callbacks = {"Button1" : lambda: qtile.cmd_spawn(myTerm)},
                     ),
-                widget.GroupBox(disable_drag = True),
+                widget.GroupBox(
+		    borderwidth = 3,
+		    hide_unused = True,
+		    active = colors[3],
+		    disable_drag = True,
+		    inactive = colors[10],
+		    highlight_method = "text",
+		    this_current_screen_border = colors[1],
+		    ),
                 widget.WindowName(foreground = colors[3]),
                 widget.Systray(icon_size = 18),
                 widget.CheckUpdates(
@@ -165,10 +174,10 @@ screens = [
                     ),
                 widget.Sep(linewidth = 0, padding = 3, background = colors[0]),
                 widget.Clock(
-                        format = '%I:%M %p, %a %d-%m-%y', 
-                        foreground = colors[1], 
-                        background = colors[9],
-                        ),
+                    format = '%I:%M %p, %a %d-%m-%y',
+                    foreground = colors[1], 
+                    background = colors[9],
+                    ),
                 widget.CurrentLayoutIcon(scale = 0.61, foreground = colors[1]),
             ],
             24,
@@ -207,5 +216,5 @@ floating_layout = layout.Floating(float_rules=[
 
 @hook.subscribe.startup_once
 def start_once():
-        home = os.path.expanduser('~')
-        subprocess.call([home + '/.config/qtile/autostart.sh'])
+    home = os.path.expanduser('~')
+    subprocess.call([home + '/.config/qtile/autostart.sh'])
