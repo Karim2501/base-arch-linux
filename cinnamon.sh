@@ -7,10 +7,10 @@
 #|----------------------------------------|
 
 #Mirror package manager
-sudo reflector -c Indonesia -a 12 --sort rate --save /etc/pacman.d/mirrorlist
+#sudo reflector -c Indonesia -a 12 --sort rate --save /etc/pacman.d/mirrorlist
 
 #Update
-sudo pacman -Syyu
+sudo pacman -Syu
 
 #Install
 sudo pacman -S --noconfirm lightdm lightdm-gtk-greeter lightdm-gtk-greeter-settings cinnamon arc-gtk-theme arc-icon-theme

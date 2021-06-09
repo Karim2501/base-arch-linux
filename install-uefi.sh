@@ -7,7 +7,7 @@
 #|----------------------------------------|
 
 #Update
-pacman -Syy --noconfirm
+pacman -Syu --noconfirm
 
 #Update Time
 ln -sf /usr/share/zoneinfo/Asia/Jakarta /etc/localtime
@@ -37,7 +37,7 @@ echo "127.0.1.1 Arch.localdomain Arch" >> /etc/hosts
 echo root:password | chpasswd
 
 #Install
-pacman -S --noconfirm grub efibootmgr networkmanager network-manager-applet wpa_supplicant base-devel linux-headers dnsutils bluez bluez-utils cups alsa alsa-utils pulseaudio openssh reflector acpi acpid acpi_call qemu qemu-arch-extra net-tools dhcpcd os-prober ntfs-3g terminus-font xorg ranger htop firefox filezilla vim nano vlc
+pacman -S --noconfirm grub efibootmgr networkmanager network-manager-applet wpa_supplicant base-devel linux-headers dnsutils bluez bluez-utils cups alsa alsa-utils pulseaudio openssh reflector acpi acpid acpi_call qemu qemu-arch-extra net-tools dhcpcd os-prober ntfs-3g terminus-font xorg ranger htop firefox filezilla vim nano vlc wget
 
 # pacman -S --noconfirm xf86-video-amdgpu
 # pacman -S --noconfirm nvidia nvidia-utils nvidia-settings
