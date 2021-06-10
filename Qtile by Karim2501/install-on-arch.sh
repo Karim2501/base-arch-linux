@@ -34,7 +34,7 @@ if [ -d ~/.srcs ]; then
   paru -S --noconfirm ttf-dejavu meslo-nerd-font-powerlevel10k moc-pulse pfetch rofi-git google-chrome telegram-desktop ttf-font-awesome ttf-font-awesome-4;
 else
   echo "make sources direktori and install paru"
-  mkdir -p ~/.srcs
+  mkdir ~/.srcs
   git clone https://aur.archlinux.org/paru.git ~/.srcs/paru
   cd ~/.srcs/paru/ && makepkg -si
   paru -S --noconfirm ttf-dejavu meslo-nerd-font-powerlevel10k moc-pulse pfetch rofi-git google-chrome telegram-desktop ttf-font-awesome ttf-font-awesome-4;
