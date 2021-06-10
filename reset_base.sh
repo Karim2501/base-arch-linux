@@ -10,7 +10,7 @@
 sudo pacman -D --asdeps $(pacman -Qqe)
 sleep 10
 
-sudo pacman -D --asexplicit base linux base-devel linux-firmware git vim sudo reflector networkmanager grub bluez bluez-utils os-prober xorg pfetch python python-pip
+sudo pacman -D --asexplicit base linux base-devel linux-firmware git vim sudo reflector networkmanager grub bluez bluez-utils os-prober xorg pfetch python python-pip feh
 sleep 10
 
 pacman -Qttdq | pacman -Rns -
