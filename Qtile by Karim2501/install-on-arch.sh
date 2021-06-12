@@ -10,10 +10,10 @@
 sudo pacman -Syu --noconfirm
 
 #Install package manager
-sudo pacman -S --noconfirm --needed base-devel wget git
+sudo pacman -S --noconfirm --needed base-devel wget
 sudo pacman -S --noconfirm --needed rofi feh xorg xorg-xinit xorg-xinput
 sudo pacman -S --needed python-pip
-sudo pacman -S --noconfirm qtile zsh gparted alacritty obs-studio code inkscape gimp libreoffice shotcut
+sudo pacman -S --noconfirm qtile zsh alacritty gparted obs-studio code inkscape gimp shotcut
 pip install psutil
 
 sleep 5 && clear
@@ -24,13 +24,13 @@ if [ -d ~/.srcs/paru ]; then
   mkdir -p ~/.srcs/paru_old && mv ~/.srcs/paru ~/.srcs/paru_old -rf
   git clone https://aur.archlinux.org/paru.git ~/.srcs/paru
   cd ~/.srcs/paru/ && makepkg -si
-  paru -S --noconfirm ttf-dejavu meslo-nerd-font-powerlevel10k moc-pulse pfetch rofi-git google-chrome telegram-desktop ttf-font-awesome ttf-font-awesome-4;
+  paru -S --noconfirm ttf-dejavu meslo-nerd-font-powerlevel10k moc-pulse pfetch google-chrome telegram-desktop ttf-font-awesome ttf-font-awesome-4 wps-office wps-office-fonts;
 else
   echo "make sources direktori and install paru"
   mkdir ~/.srcs
   git clone https://aur.archlinux.org/paru.git ~/.srcs/paru
   cd ~/.srcs/paru/ && makepkg -si
-  paru -S --noconfirm ttf-dejavu meslo-nerd-font-powerlevel10k moc-pulse pfetch rofi-git google-chrome telegram-desktop ttf-font-awesome ttf-font-awesome-4;
+  paru -S --noconfirm ttf-dejavu meslo-nerd-font-powerlevel10k moc-pulse pfetch google-chrome telegram-desktop ttf-font-awesome ttf-font-awesome-4 wps-office wps-office-fonts;
 fi
 
 sleep 5 && clear

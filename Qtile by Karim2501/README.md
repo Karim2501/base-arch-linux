@@ -3,6 +3,7 @@
 - [About](#about)
 - [Keybindings](#keybind)
 - [Installation](#install)
+- [Dependency](#dep)
 
 <a id="about"></a>
 ## About This Config
@@ -10,34 +11,58 @@ I made this configuration so that we don't have to install one by one and our wo
 
 <a id="keybind"></a>
 ## Keybindings
-In this configuration i use a default keybindings(`.config/qtile/config.py`)....
+In this configuration i use a default keybindings(`.config/qtile/config.py`)...
 
-|	Keybind		|		Function		|
-| --------------------- | ------------------------------------- |
-| Win + Enter		| Launch terminal (alacritty)		|
-| Win + w		| Close window				|
-| Win + ctrl + r	| Restart Qtile				|
-| Win + ctrl + q	| Shutdown Qtile			|
-| Win + tab		| Toggle between layouts		|
-| Win +	h		| Move focus to left			|
-| Win + l		| Move focus to right			|
-| Win + j		| Move focus to down			|
-| Win + k		| Move focus to up			|
-| Win + shift + h	| Move window to the left		|
-| Win + shift + l	| Move window to the right		|
-| Win + shift + j	| Move window to the down		|
-| Win + shift + k	| Move window to the up 		|
-| Win + ctrl + h	| Grow window to the left		|
-| Win + ctrl + l	| Grow window to the right		|
-| Win + ctrl + j	| Grow window to the down		|
-| Win + ctrl + k	| Grow window to the up			|
-| Win + n		| Reset all window sizes		|
-| Win + g		| Launch Google				|
-| Win + r		| Launch Rofi				|
-| Win + t		| Launch Telegram			|
+|	Keybind		|		Function	|
+| --------------------- | ----------------------------- |
+| Win + Enter		| Launch terminal (alacritty)	|
+| Win + w		| Close window			|
+| Win + ctrl + r	| Restart Qtile			|
+| Win + ctrl + q	| Shutdown Qtile		|
+| Win + Tab		| Toggle between layouts	|
+| Win +	h/Left		| Move focus to left		|
+| Win + l/Right		| Move focus to right		|
+| Win + j/Down		| Move focus to down		|
+| Win + k/Up		| Move focus to up		|
+| Win + shift + h	| Move window to the left	|
+| Win + shift + l	| Move window to the right	|
+| Win + shift + j	| Move window to the down	|
+| Win + shift + k	| Move window to the up 	|
+| Win + ctrl + h	| Grow window to the left	|
+| Win + ctrl + l	| Grow window to the right	|
+| Win + ctrl + j	| Grow window to the down	|
+| Win + ctrl + k	| Grow window to the up		|
+| Win + n		| Reset all window sizes	|
+| Win + g		| Launch Google			|
+| Win + r		| Launch Rofi Installed Package	|
+| Win + shift + r	| Launch Rofi All Package	|
+| Win + t		| Launch Telegram		|
+| Win + Drag Left Mouse	| Drag Windows			|
+| Win + Drag Right	| Resize Windows		|
+| Win + Midle Click	| Bring Windows to front	|
 
 <a id="install"></a>
 ## Installation
 You can install my configuration with my script shell.
-- `chmod +x install-on-arch.sh`
+- `chmod +x install-on-arch.sh after-install.sh`
 - `./install-on-arch.sh`
+- `./after-install.sh`
+
+<a id="dep"></a>
+##Dependency
+- Qtile
+- xorg
+- alacritty
+- ZSH
+- oh-my-zsh(highlighting & autosuggestion)
+- powerlevel10k
+- feh
+- rofi
+- wps-office
+- wps-office-fonts
+- python-pip(psutil)
+- moc-pulse
+- pfetch
+- google-chrome
+- telegram-desktop
+
