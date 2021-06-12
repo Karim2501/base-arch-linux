@@ -49,7 +49,7 @@ You can install my configuration with my script shell.
 - `./after-install.sh`
 
 <a id="dep"></a>
-##Dependency
+## Dependency
 - Qtile
 - xorg
 - alacritty
