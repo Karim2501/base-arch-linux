@@ -20,18 +20,18 @@ In this configuration i use a default keybindings(`.config/qtile/config.py`)...
 | Win + ctrl + r	| Restart Qtile			|
 | Win + ctrl + q	| Shutdown Qtile		|
 | Win + Tab		| Toggle between layouts	|
-| Win +	h/Left		| Move focus to left		|
-| Win + l/Right		| Move focus to right		|
-| Win + j/Down		| Move focus to down		|
-| Win + k/Up		| Move focus to up		|
-| Win + shift + h	| Move window to the left	|
-| Win + shift + l	| Move window to the right	|
-| Win + shift + j	| Move window to the down	|
-| Win + shift + k	| Move window to the up 	|
-| Win + ctrl + h	| Grow window to the left	|
-| Win + ctrl + l	| Grow window to the right	|
-| Win + ctrl + j	| Grow window to the down	|
-| Win + ctrl + k	| Grow window to the up		|
+| Win +	h / Left	| Move focus to left		|
+| Win + l / Right	| Move focus to right		|
+| Win + j / Down	| Move focus to down		|
+| Win + k / Up		| Move focus to up		|
+| Win + shift + h / Left| Move window to the left	|
+| Win + shift + l / Right| Move window to the right	|
+| Win + shift + j / Down| Move window to the down	|
+| Win + shift + k / Up	| Move window to the up 	|
+| Win + ctrl + h / Left	| Grow window to the left	|
+| Win + ctrl + l / Right| Grow window to the right	|
+| Win + ctrl + j / Down	| Grow window to the down	|
+| Win + ctrl + k / Up	| Grow window to the up		|
 | Win + n		| Reset all window sizes	|
 | Win + g		| Launch Google			|
 | Win + r		| Launch Rofi Installed Package	|
