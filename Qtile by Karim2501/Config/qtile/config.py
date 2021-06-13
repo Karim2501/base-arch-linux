@@ -51,7 +51,8 @@ keys = [
     # Apps Keys
     Key([mod], "g", lazy.spawn("google-chrome-stable"), desc="Launch Google-browser"),
     Key([mod], "Return", lazy.spawn(myTerm), desc="Launch terminal"),
-    Key([mod], "r", lazy.spawn("rofi -show run"), desc="Launch Rofi"),
+    Key([mod], "r", lazy.spawn("rofi -show drun"), desc="Launch Rofi Installed Package"),
+    Key([mod, "shift"], "r", lazy.spawn("rofi -show run"), desc="Launch Rofi All Package"),
     Key([mod], "t", lazy.spawn("telegram-desktop"), desc="Launch Telegram"),
 ]
 

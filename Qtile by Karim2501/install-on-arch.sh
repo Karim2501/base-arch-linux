@@ -24,13 +24,13 @@ if [ -d ~/.srcs/paru ]; then
   mkdir -p ~/.srcs/paru_old && mv ~/.srcs/paru ~/.srcs/paru_old
   git clone https://aur.archlinux.org/paru.git ~/.srcs/paru
   cd ~/.srcs/paru/ && makepkg -si
-  paru -S --noconfirm ttf-dejavu meslo-nerd-font-powerlevel10k moc-pulse pfetch google-chrome telegram-desktop ttf-font-awesome ttf-font-awesome-4 wps-office wps-office-fonts;
+  paru -S --confirm --needed ttf-dejavu meslo-nerd-font-powerlevel10k moc-pulse pfetch google-chrome telegram-desktop ttf-font-awesome ttf-font-awesome-4 wps-office wps-office-fonts;
 else
   echo "make sources direktori and install paru"
   mkdir ~/.srcs
   git clone https://aur.archlinux.org/paru.git ~/.srcs/paru
   cd ~/.srcs/paru/ && makepkg -si
-  paru -S --noconfirm ttf-dejavu meslo-nerd-font-powerlevel10k moc-pulse pfetch google-chrome telegram-desktop ttf-font-awesome ttf-font-awesome-4 wps-office wps-office-fonts;
+  paru -S --confirm --needed ttf-dejavu meslo-nerd-font-powerlevel10k moc-pulse pfetch google-chrome telegram-desktop ttf-font-awesome ttf-font-awesome-4 wps-office wps-office-fonts;
 fi
 
 sleep 5 && clear
