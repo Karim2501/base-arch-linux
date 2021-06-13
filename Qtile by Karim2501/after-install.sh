@@ -12,7 +12,7 @@ else
 fi
 
 #Copy Source Code
-if [ -f ~/.xinitrc]; then
+if [ -f ~/.xinitrc ]; then
   echo "xinitrc detected, backup..."
   mv ~/.xinitrc ~/.xinitrc_old
   cp Script/xinitrc ~/ -rf && mv ~/xinitrc ~/.xinitrc;
@@ -21,7 +21,7 @@ else
   cp Script/xinitrc ~/ -rf && mv ~/xinitrc ~/.xinitrc;
 fi
 
-if [ -f ~/.zshrc]; then
+if [ -f ~/.zshrc ]; then
   echo "zshrc detected, backup..."
   mv ~/.zshrc ~/.zshrc_old
   cp Script/zshrc ~/ -rf && mv ~/zshrc ~/.zshrc;
@@ -30,7 +30,7 @@ else
   cp Script/zshrc ~/ -rf && mv ~/zshrc ~/.zshrc;
 fi
 
-if [ -f ~/.zprofile]; then
+if [ -f ~/.zprofile ]; then
   echo "zprofile detected, backup..."
   mv ~/.zprofile ~/.zprofile_old
   cp Script/zprofile ~/ -rf && mv ~/zprofile ~/.zprofile;
@@ -38,7 +38,7 @@ else
   echo "zprofile not detected, install..."
   cp Script/zprofile ~/ -rf && mv ~/zprofile ~/.zprofile;
 fi
-if [ -f ~/.vimrc]; then
+if [ -f ~/.vimrc ]; then
   echo "vimrc detected, backup..."
   mv ~/.vimrc ~/.vimrc_old
   cp Script/vimrc ~/ -rf && mv ~/vimrc ~/.vimrc;
