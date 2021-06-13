@@ -21,7 +21,7 @@ sleep 5 && clear
 if [ -d ~/.srcs/paru ]; then
   echo "source direktori detected, install paru now..."
   cd ~/.srcs/paru/ && makepkg -si
-  paru -S --confirm --needed ttf-dejavu meslo-nerd-font-powerlevel10k moc-pulse pfetch google-chrome telegram-desktop ttf-font-awesome ttf-font-awesome-4 wps-office wps-office-fonts;
+  paru -S --confirm --needed ttf-dejavu ttf-meslo-nerd-font-powerlevel10k moc-pulse pfetch google-chrome telegram-desktop ttf-font-awesome ttf-font-awesome-4 wps-office wps-office-fonts;
 else
   echo "make sources direktori and install paru"
   mkdir ~/.srcs
