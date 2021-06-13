@@ -19,10 +19,7 @@ pip install psutil
 sleep 5 && clear
 #Install paru
 if [ -d ~/.srcs/paru ]; then
-  echo "source direktori detected, backup and install paru"
-  rm -rf ~/.srcs/paru_old
-  mkdir -p ~/.srcs/paru_old && mv ~/.srcs/paru ~/.srcs/paru_old
-  git clone https://aur.archlinux.org/paru.git ~/.srcs/paru
+  echo "source direktori detected, install paru now..."
   cd ~/.srcs/paru/ && makepkg -si
   paru -S --confirm --needed ttf-dejavu meslo-nerd-font-powerlevel10k moc-pulse pfetch google-chrome telegram-desktop ttf-font-awesome ttf-font-awesome-4 wps-office wps-office-fonts;
 else
