@@ -21,7 +21,7 @@ sleep 5 && clear
 if [ -d ~/.srcs/paru ]; then
   echo "source direktori detected, backup and install paru"
   rm -rf ~/.srcs/paru_old
-  mkdir -p ~/.srcs/paru_old && mv ~/.srcs/paru ~/.srcs/paru_old -rf
+  mkdir -p ~/.srcs/paru_old && mv ~/.srcs/paru ~/.srcs/paru_old
   git clone https://aur.archlinux.org/paru.git ~/.srcs/paru
   cd ~/.srcs/paru/ && makepkg -si
   paru -S --noconfirm ttf-dejavu meslo-nerd-font-powerlevel10k moc-pulse pfetch google-chrome telegram-desktop ttf-font-awesome ttf-font-awesome-4 wps-office wps-office-fonts;
