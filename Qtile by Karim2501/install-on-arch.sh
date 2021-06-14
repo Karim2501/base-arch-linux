@@ -16,21 +16,21 @@ sudo pacman -S --needed python-pip
 sudo pacman -S --noconfirm qtile zsh alacritty gparted obs-studio code inkscape gimp shotcut
 pip install psutil
 
-sleep 5 && clear
+sleep 10 && clear
 #Install paru
 if [ -d ~/.srcs/paru ]; then
   echo "source direktori detected, install paru now..."
   cd ~/.srcs/paru/ && makepkg -si
-  paru -S --confirm --needed ttf-dejavu ttf-meslo-nerd-font-powerlevel10k moc-pulse pfetch google-chrome telegram-desktop ttf-font-awesome ttf-font-awesome-4 wps-office wps-office-fonts;
+  paru -S --noconfirm --needed ttf-dejavu ttf-meslo-nerd-font-powerlevel10k moc-pulse pfetch google-chrome telegram-desktop ttf-font-awesome ttf-font-awesome-4 wps-office wps-office-fonts;
 else
   echo "make sources direktori and install paru"
   mkdir ~/.srcs
   git clone https://aur.archlinux.org/paru.git ~/.srcs/paru
   cd ~/.srcs/paru/ && makepkg -si
-  paru -S --confirm --needed ttf-dejavu meslo-nerd-font-powerlevel10k moc-pulse pfetch google-chrome telegram-desktop ttf-font-awesome ttf-font-awesome-4 wps-office wps-office-fonts;
+  paru -S --noconfirm --needed ttf-dejavu meslo-nerd-font-powerlevel10k moc-pulse pfetch google-chrome telegram-desktop ttf-font-awesome ttf-font-awesome-4 wps-office wps-office-fonts;
 fi
 
-sleep 5 && clear
+sleep 10 && clear
 #Install oh-my-zsh
 if [ -d ~/.oh-my-zsh ]; then
   echo "file oh-my-zsh detected, backup..."
