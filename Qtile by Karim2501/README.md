@@ -4,6 +4,7 @@
 - [Keybindings](#keybind)
 - [Installation](#install)
 - [Dependency](#dep)
+- [Troubleshooting](#trouble)
 
 <a id="about"></a>
 ## About This Config
@@ -66,3 +67,9 @@ You can install my configuration with my script shell.
 - google-chrome
 - telegram-desktop
 
+<a id="trouble"></a>
+## Troubleshooting
+if you have problem with source ~/.zshrc
+<br>try restarting laptop and retype `source ~/.zshrc` manually
+<br>then try typing `p10k configure` and powerlevel10k will be configured
+<br>enjoy:)
