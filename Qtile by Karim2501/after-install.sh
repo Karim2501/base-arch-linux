@@ -47,7 +47,7 @@ else
   cp Script/vimrc ~/ -rf && mv ~/vimrc ~/.vimrc;
 fi
 
-cp Pictures/* ~/ -rf
+cp Pictures ~/ -rf
 
 #Install font external
 #if [ -d ~/.local/share/fonts ]; then
