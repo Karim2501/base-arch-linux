@@ -19,7 +19,7 @@ keys = [
     Key([mod], "Down", lazy.layout.down(), desc="Move focus down"),
     Key([mod], "k", lazy.layout.up(), desc="Move focus up"),
     Key([mod], "Up", lazy.layout.up(), desc="Move focus up"),
-   
+
     # Windows Keys
     Key([mod, "shift"], "h", lazy.layout.shuffle_left(), desc="Move window to the left"),
     Key([mod, "shift"], "Left", lazy.layout.shuffle_left(), desc="Move window to the left"),
@@ -38,10 +38,10 @@ keys = [
     Key([mod, "control"], "Down", lazy.layout.grow_down(), desc="Grow window down"),
     Key([mod, "control"], "k", lazy.layout.grow_up(), desc="Grow window up"),
     Key([mod, "control"], "Up", lazy.layout.grow_up(), desc="Grow window up"),
-    
+
     Key([mod], "n", lazy.layout.normalize(), desc="Reset all window sizes"),
     Key([mod, "shift"], "Return", lazy.layout.toggle_split(), desc="Toggle between split and unsplit sides of stack"),
-    
+
     # System Keys
     Key([mod], "Tab", lazy.next_layout(), desc="Toggle between layouts"),
     Key([mod], "w", lazy.window.kill(), desc="Kill focused window"),
@@ -72,18 +72,18 @@ layout_theme = {"margin" : 3,
 
 layouts = [
     layout.Columns(**layout_theme),      # 1
-    layout.Max(**layout_theme),          # 2
-    layout.MonadTall(**layout_theme),    # 3
-    layout.TreeTab(**layout_theme),      # 4
-    #layout.Stack(num_stacks=5),         # 5
-    #layout.RatioTile(**layout_theme),   # 6
-    #layout.Bsp(**layout_theme),         # 7
-    #layout.Tile(**layout_theme),        # 8
-    #layout.Zoomy(**layout_theme),       # 9
-    #layout.Matrix(**layout_theme),      # 10
-    #layout.MonadWide(**layout_theme),   # 11
-    #layout.VerticalTile(**layout_theme) # 12
-    #layout.Floating(**layout_theme),    # 13
+    layout.TreeTab(**layout_theme),      # 2
+    layout.Max(**layout_theme),          # 3
+    #layout.MonadTall(**layout_theme),    # 4
+    #layout.Stack(num_stacks=5),          # 5
+    #layout.RatioTile(**layout_theme),    # 6
+    #layout.Bsp(**layout_theme),          # 7
+    #layout.Tile(**layout_theme),         # 8
+    #layout.Zoomy(**layout_theme),        # 9
+    #layout.Matrix(**layout_theme),       # 10
+    #layout.MonadWide(**layout_theme),    # 11
+    #layout.VerticalTile(**layout_theme)  # 12
+    #layout.Floating(**layout_theme),     # 13
 ]
 
 colors = [["#131313", "#131313"], # 0. Separator
@@ -113,8 +113,8 @@ screens = [
         top=bar.Bar(
             [
                 widget.Image(
-                    filename = "~/.config/qtile/Pictures/terminal_icons.png", 
-                    scale = True, 
+                    filename = "~/.config/qtile/Pictures/terminal_icons.png",
+                    scale = True,
                     mouse_callbacks = {"Button1" : lambda: qtile.cmd_spawn(myTerm)},
                     ),
                 widget.GroupBox(
@@ -168,7 +168,7 @@ screens = [
                     ),
                 widget.Sep(linewidth = 0, padding = 3, background = colors[0]),
                 widget.Volume(
-                    update_interval = 5, 
+                    update_interval = 5,
                     foreground = colors[1],
                     background = colors[8],
                     mouse_callbacks = {"Button1" : lambda : qtile.cmd_spawn("pavucontrol")},
@@ -176,7 +176,7 @@ screens = [
                 widget.Sep(linewidth = 0, padding = 3, background = colors[0]),
                 widget.Clock(
                     format = '%I:%M %p, %a %d-%m-%y',
-                    foreground = colors[1], 
+                    foreground = colors[1],
                     background = colors[9],
                     ),
                 widget.CurrentLayoutIcon(scale = 0.61, foreground = colors[1]),
