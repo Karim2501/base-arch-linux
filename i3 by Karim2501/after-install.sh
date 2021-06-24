@@ -7,7 +7,7 @@
 #|----------------------------------------|
 
 #Copy Config file
-cd ~/base-arch-linux/Qtile\ by\ Karim2501
+cd ~/base-arch-linux/i3\ by\ Karim2501
 
 if [ -d ~/.config ]; then
   echo "config direktori detected, backup..."
