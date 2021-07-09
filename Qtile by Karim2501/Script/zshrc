@@ -1,5 +1,4 @@
 # Startup
-#neofetch
 pfetch
 
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
@@ -32,6 +31,25 @@ alias paci="sudo pacman -S"
 alias parsy="paru -Syyu"
 alias pari="paru -S"
 alias py3="python3"
+alias winbox="wine /home/Linux/SMK\ 1/.mikrotik/Mikrotik\ Installer/winbox\ 3.27.exe &"
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/home/Linux/Projek/Coding/Python/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/home/Linux/Projek/Coding/Python/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/Linux/Projek/Coding/Python/miniconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/home/Linux/Projek/Coding/Python/miniconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
+export VISUAL=nvim;
+export EDITOR=nvim;
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
