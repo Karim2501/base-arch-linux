@@ -46,6 +46,7 @@ else
   echo "zprofile not detected, install..."
   cp Script/zprofile ~/ -rf && mv ~/zprofile ~/.zprofile;
 fi
+
 if [ -f ~/.vimrc ]; then
   echo "vimrc detected, backup..."
   mv ~/.vimrc ~/.vimrc_old

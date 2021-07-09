@@ -13,7 +13,6 @@
 sudo pacman -Syu
 
 #Install
-sudo pacman -S --noconfirm sddm
 sudo pacman -S --noconfirm plasma plasma-wayland-session kde-applications
 
 sudo systemctl enable sddm

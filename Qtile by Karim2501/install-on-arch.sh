@@ -27,7 +27,7 @@ else
   mkdir ~/.srcs
   git clone https://aur.archlinux.org/paru.git ~/.srcs/paru
   cd ~/.srcs/paru/ && makepkg -si
-  paru -S --noconfirm --needed ttf-dejavu meslo-nerd-font-powerlevel10k moc-pulse pfetch google-chrome telegram-desktop ttf-font-awesome ttf-font-awesome-4 wps-office wps-office-fonts;
+  paru -S --noconfirm --needed ttf-dejavu ttf-meslo-nerd-font-powerlevel10k moc-pulse pfetch google-chrome telegram-desktop ttf-font-awesome ttf-font-awesome-4 wps-office wps-office-fonts;
 fi
 
 sleep 10 && clear
