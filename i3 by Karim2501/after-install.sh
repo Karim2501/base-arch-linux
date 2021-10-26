@@ -38,6 +38,15 @@ else
   cp Script/zshrc ~/ -rf && mv ~/zshrc ~/.zshrc;
 fi
 
+if [ -f ~/.p10k.zsh]; then
+  echo "Powerlevel 10k detected, backup..."
+  mv ~/.p10k.zsh ~/.p10k_old.zsh
+  cp Script/p10k.zsh ~/ -rf && mv ~/p10k.zsh ~/.p10k.zsh;
+else
+  echo "PowerLevel 10k not detected, install..."
+  cp Script/p10k.zsh ~/ -rf && mv ~/p10.zsh ~/.p10k.zsh;
+fi
+
 if [ -f ~/.zprofile ]; then
   echo "zprofile detected, backup..."
   mv ~/.zprofile ~/.zprofile_old
